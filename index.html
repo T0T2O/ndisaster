@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自然災害にそなえるまちづくり 総復習ステーション（4年 社会）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1F2A36; --ink2:#4A5866; --paper:#EEF3F1; --card:#FFFFFF; --line:#C9D4D0;
+  --jishin:#B5543A; --suigai:#2F6DB5; --oyuki:#5B7C99; --toppu:#2E9A5B;
+  --sticker:#FFD84D; --ok:#1E8A4C; --okbg:#E6F5EC; --ng:#C23B22; --ngbg:#FCEBE6;
+  --hint:#6B4E9B; --hintbg:#F2EDF9;
+  --fs:17px;
+}
+*{box-sizing:border-box}
+html{font-size:var(--fs)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans CJK JP",sans-serif;line-height:1.75;-webkit-text-size-adjust:100%}
+h1,h2,h3,.disp{font-family:"Zen Maru Gothic","BIZ UDPGothic","Hiragino Maru Gothic ProN",sans-serif}
+button{font-family:inherit;font-size:1rem;color:inherit;cursor:pointer}
+button:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--suigai);outline-offset:2px}
+rt{font-size:.5em;color:var(--ink2);font-weight:400}
+body.noruby rt{display:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+
+.hero{background:var(--ink);color:#fff;padding:26px 0 0;position:relative;overflow:hidden}
+.hero .kicker{display:inline-block;background:var(--sticker);color:var(--ink);font-weight:700;font-size:.82rem;padding:2px 12px;border-radius:999px;letter-spacing:.06em}
+.hero h1{font-size:2.15rem;font-weight:900;margin:10px 0 4px;letter-spacing:.02em;line-height:1.3}
+.hero h1 .hl{color:var(--sticker)}
+.hero p.lead{margin:0 0 18px;color:#D6DEE6;font-size:.96rem;max-width:44em}
+.stripes{display:grid;grid-template-columns:repeat(4,1fr);height:12px}
+.stripes span:nth-child(1){background:var(--jishin)}
+.stripes span:nth-child(2){background:var(--suigai)}
+.stripes span:nth-child(3){background:var(--oyuki)}
+.stripes span:nth-child(4){background:var(--toppu)}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tool{background:transparent;border:1.5px solid #6D7E8E;color:#fff;border-radius:999px;padding:4px 14px;font-size:.85rem}
+.tool[aria-pressed="true"]{background:var(--sticker);color:var(--ink);border-color:var(--sticker);font-weight:700}
+
+nav.tabs{position:sticky;top:0;z-index:20;background:var(--card);border-bottom:2px solid var(--line);box-shadow:0 2px 8px rgba(31,42,54,.06)}
+nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:0}
+.tab{flex:0 0 auto;border:0;background:transparent;padding:8px 13px 10px;border-bottom:4px solid transparent;font-weight:700;color:var(--ink2);font-family:"Zen Maru Gothic",sans-serif;font-size:.95rem;white-space:nowrap}
+.tab .n{display:inline-block;min-width:1.6em;height:1.6em;line-height:1.6em;border-radius:50%;background:var(--paper);text-align:center;margin-right:6px;font-size:.8rem}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--sticker)}
+.tab[aria-selected="true"] .n{background:var(--sticker)}
+.score{margin-left:auto;align-self:center;font-size:.82rem;color:var(--ink2);white-space:nowrap;padding:0 4px 6px}
+.score b{color:var(--ok);font-size:1rem}
+
+main{padding:22px 0 60px}
+section.panel{display:none}
+section.panel.on{display:block}
+.sechead{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin:6px 0 14px}
+.sechead h2{margin:0;font-size:1.55rem;font-weight:900}
+.tag{display:inline-block;font-size:.78rem;font-weight:700;padding:1px 10px;border-radius:4px;background:var(--sticker);color:var(--ink)}
+.tag.test{background:var(--ink);color:#fff}
+.howto{background:var(--card);border-left:6px solid var(--sticker);border-radius:0 10px 10px 0;padding:10px 16px;margin:0 0 18px;font-size:.93rem}
+.howto b{color:var(--ink)}
+
+.pairs{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px;margin-bottom:26px}
+.pair{background:var(--card);border-radius:12px;border:1.5px solid var(--line);overflow:hidden;display:flex;flex-direction:column}
+.pair .row{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.pair .w{padding:12px 12px 10px;font-weight:700;font-size:1rem;line-height:1.5}
+.pair .w rt{font-size:.42em}
+.pair .w small{display:block;font-size:.68rem;font-weight:700;color:var(--ink2);letter-spacing:.04em}
+.pair .w.t{background:#F7FAF9}
+.pair .w.s{background:var(--ink);color:#fff}
+.pair .w.s small{color:var(--sticker)}
+.pair .eq{display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;background:var(--sticker)}
+.pair .mean{padding:8px 12px 10px;font-size:.86rem;color:var(--ink2);border-top:1px dashed var(--line);flex:1}
+.pair .mean .pg{float:right;font-size:.72rem;background:var(--paper);border-radius:4px;padding:0 6px;margin-left:6px;color:var(--ink)}
+.pair.jishin{border-top:6px solid var(--jishin)}
+.pair.suigai{border-top:6px solid var(--suigai)}
+.pair.oyuki{border-top:6px solid var(--oyuki)}
+.pair.toppu{border-top:6px solid var(--toppu)}
+.pair.etc{border-top:6px solid var(--ink2)}
+h3.sub{font-size:1.18rem;margin:26px 0 10px;display:flex;align-items:center;gap:10px}
+h3.sub::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--sticker);border:3px solid var(--ink)}
+
+.flips{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px}
+.flip{perspective:900px;height:158px;border:0;padding:0;background:transparent;text-align:left}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.flip[aria-pressed="true"] .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column}
+.flip .f{background:var(--card);border:2px solid var(--ink);justify-content:center;align-items:center;text-align:center}
+.flip .f .word{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:1.22rem;line-height:1.4}
+.flip .f .tap{font-size:.7rem;color:var(--ink2);margin-top:6px}
+.flip .b{background:var(--ink);color:#fff;transform:rotateY(180deg);font-size:.84rem;line-height:1.6;overflow:auto}
+.flip .b b{color:var(--sticker);display:block;font-size:.92rem;margin-bottom:2px}
+.flip .b rt{color:#B9C6D2}
+@media (prefers-reduced-motion:reduce){.flip .in{transition:none}}
+
+.qlist{display:grid;gap:14px}
+.q{background:var(--card);border-radius:14px;border:1.5px solid var(--line);padding:14px 16px 14px}
+.q .qh{display:flex;gap:10px;align-items:flex-start}
+.q .qn{flex:0 0 auto;font-family:"Zen Maru Gothic",sans-serif;font-weight:900;background:var(--ink);color:#fff;border-radius:8px;min-width:2.2em;text-align:center;padding:0 6px;line-height:1.9}
+.q .qt{flex:1;font-weight:700;font-size:1.02rem}
+.q .meta{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 8px 3em;align-items:center}
+.chip{font-size:.73rem;border-radius:999px;padding:0 10px;background:var(--paper);color:var(--ink);font-weight:700;border:1px solid var(--line)}
+.chip.p{background:#fff8d6;border-color:#E9CF62}
+.say{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:0 10px;font-size:.76rem;line-height:1.9;display:inline-flex;align-items:center;gap:4px;color:var(--ink2)}
+.say svg{width:14px;height:14px}
+.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin-left:3em}
+.ch{text-align:left;background:#F7FAF9;border:2px solid var(--line);border-radius:10px;padding:8px 12px;line-height:1.55;font-size:.95rem}
+.ch:hover{border-color:var(--ink2)}
+.ch.ok{background:var(--okbg);border-color:var(--ok);font-weight:700}
+.ch.ng{background:var(--ngbg);border-color:var(--ng);text-decoration:line-through;text-decoration-color:var(--ng)}
+.ch[disabled]{cursor:default}
+.fb{margin:10px 0 0 3em;border-radius:10px;padding:8px 12px;font-size:.92rem;display:none}
+.fb.show{display:block}
+.fb.ok{background:var(--okbg);border-left:5px solid var(--ok)}
+.fb.ng{background:var(--ngbg);border-left:5px solid var(--ng)}
+.fb .mark{font-weight:900;font-family:"Zen Maru Gothic",sans-serif;margin-right:6px}
+.retry{margin:10px 0 0 3em;background:transparent;border:1.5px solid var(--ink2);border-radius:999px;padding:2px 14px;font-size:.84rem;display:none}
+.retry.show{display:inline-block}
+
+/* 4つの災害 */
+.dis4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px}
+.dcard{background:var(--card);border-radius:12px;border:2px solid var(--line);border-top-width:8px;padding:12px 13px}
+.dcard h4{margin:0 0 6px;font-size:1.02rem;font-family:"Zen Maru Gothic",sans-serif;font-weight:900}
+.dcard ul{margin:0;padding-left:1.1em;font-size:.84rem;line-height:1.6;color:var(--ink2)}
+.dcard.d1{border-top-color:var(--jishin)} .dcard.d1 h4{color:var(--jishin)}
+.dcard.d2{border-top-color:var(--suigai)} .dcard.d2 h4{color:var(--suigai)}
+.dcard.d3{border-top-color:var(--oyuki)} .dcard.d3 h4{color:var(--oyuki)}
+.dcard.d4{border-top-color:var(--toppu)} .dcard.d4 h4{color:var(--toppu)}
+
+/* 仕分け */
+.bins{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.bin{background:var(--card);border:2px dashed var(--line);border-radius:12px;min-height:120px;padding:8px 10px}
+.bin.sel{border-color:var(--sticker);border-style:solid;box-shadow:0 0 0 3px #FFF3BC}
+.bin h5{margin:0 0 6px;font-size:.95rem;font-family:"Zen Maru Gothic",sans-serif;font-weight:900;text-align:center}
+.bin h5 small{display:block;font-size:.7rem;color:var(--ink2);font-weight:400}
+.bin .items{display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
+.bin .items .tok{font-size:.82rem}
+.tok{background:#F7FAF9;border:2px solid var(--line);border-radius:8px;padding:5px 10px;font-weight:700;font-size:.9rem;line-height:1.3}
+.tok.pick{border-color:var(--ink);background:#FFF8D6}
+.tok.done{background:var(--okbg);border-color:var(--ok);cursor:default}
+.tok.bad{background:var(--ngbg);border-color:var(--ng)}
+.pool{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.bar{display:flex;align-items:center;gap:10px;margin:0 0 18px;flex-wrap:wrap;font-size:.88rem;color:var(--ink2)}
+.bar b{color:var(--ink)}
+.btn{background:var(--ink);color:#fff;border:0;border-radius:999px;padding:6px 18px;font-weight:700;font-size:.88rem}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink2)}
+
+/* 考える問題 */
+.think{background:var(--card);border-radius:14px;border:1.5px solid var(--line);padding:16px 18px;margin-bottom:16px}
+.think h4{margin:0 0 4px;font-size:1.08rem;font-family:"Zen Maru Gothic",sans-serif;font-weight:900}
+.think .sit{font-size:.9rem;color:var(--ink2);margin:0 0 12px}
+.hintbox{border:1.5px solid #D9CFEF;background:var(--hintbg);border-radius:10px;padding:9px 13px;margin:0 0 8px;font-size:.88rem;display:none}
+.hintbox.show{display:block}
+.hintbox b{color:var(--hint)}
+textarea{width:-webkit-fill-available;width:100%;min-height:88px;border:2px solid var(--line);border-radius:10px;padding:10px 12px;font-family:inherit;font-size:.98rem;line-height:1.8;resize:vertical;background:#FCFDFC}
+textarea:focus{border-color:var(--ink2)}
+.hbtns{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 0}
+.words{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 0}
+.word{font-size:.8rem;border:1.5px solid var(--line);background:#F7FAF9;border-radius:999px;padding:2px 11px;font-weight:700}
+.word.hit{background:var(--okbg);border-color:var(--ok);color:var(--ok)}
+.model{background:#FFFDF3;border:1.5px solid #E9D98A;border-radius:10px;padding:10px 13px;margin:10px 0 0;font-size:.9rem;display:none}
+.model.show{display:block}
+.model b{display:block;color:#8A6A12;font-size:.8rem;margin-bottom:2px}
+footer.wrap{font-size:.78rem;color:var(--ink2);padding-bottom:40px;line-height:1.8}
+footer.wrap b{color:var(--ink)}
+
+@media (max-width:760px){
+  :root{--fs:16px}
+  .hero h1{font-size:1.6rem}
+  .dis4{grid-template-columns:repeat(2,1fr)}
+  .bins{grid-template-columns:repeat(2,1fr)}
+  .choices{margin-left:0}
+  .fb,.retry{margin-left:0}
+  .q .meta{margin-left:0}
+  .pair .row{grid-template-columns:1fr 30px 1fr}
+  .pair .w{font-size:.9rem;padding:8px 9px}
+}
+@media print{nav.tabs,.tools{display:none}section.panel{display:block !important;break-before:page}.hero{background:#fff;color:var(--ink)}.hintbox,.model{display:block !important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">4年 社会　自然災害からくらしを守る</span>
+    <h1>自然災害に<span class="hl">そなえる</span>まちづくり<br>総復習ステーション</h1>
+    <p class="lead">① ことば → ② 4つの災害 → ③ そなえの仕分け → ④ 一問一答 → ⑤ 考える問題 の順に進みます。まちがえても「もう一回」でやり直せるので、先にぜんぶ試してから、もう一度やってみよう。</p>
+    <div class="tools">
+      <button class="tool" id="tRuby" aria-pressed="true">ふりがな</button>
+      <button class="tool" id="tBig" aria-pressed="false">文字を大きく</button>
+      <button class="tool" id="tSay" aria-pressed="true">読み上げボタン</button>
+    </div>
+  </div>
+  <div class="stripes" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+</header>
+
+<nav class="tabs" aria-label="学習メニュー">
+  <div class="wrap" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-p="p1"><span class="n">1</span>ことば</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p2"><span class="n">2</span>4つの災害</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p3"><span class="n">3</span>そなえ仕分け</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p4"><span class="n">4</span>一問一答</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p5"><span class="n">5</span>考える問題</button>
+    <span class="score" aria-live="polite">できた：<b id="sc">0</b> / <span id="scAll">0</span></span>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ================= 1 ことば ================= -->
+<section class="panel on" id="p1" role="tabpanel">
+  <div class="sechead"><h2>ことばの言いかえ</h2><span class="tag">同じものでも、名前がちがう！</span></div>
+  <div class="howto"><b>教科書</b>と<b>プリント（横浜市のれい）</b>では、<b>同じものなのに 名前がちがう</b>ことがあります。左が教科書、右がプリントのことば。<b>どちらで出ても答えられる</b>ようにしよう。とくに「ひなん場所」と「ひなん所」は、<u>ちがうもの</u>なので注意。</div>
+
+  <div class="pairs" id="pairs"></div>
+
+  <h3 class="sub">言いかえクイズ</h3>
+  <div class="qlist" id="quizA"></div>
+
+  <h3 class="sub">キーワードカード（タップでうらがえる）</h3>
+  <div class="flips" id="flips"></div>
+</section>
+
+<!-- ================= 2 4つの災害 ================= -->
+<section class="panel" id="p2" role="tabpanel">
+  <div class="sechead"><h2>4つの災害</h2><span class="tag">神奈川県では、ぜんぶ起きている</span></div>
+  <div class="howto">「災害＝地震」だと思っていませんか？ 神奈川県では <b>地震・水害・大雪・突風</b> の4つが起きています。まずカードで <b>何が起きるか</b> をおさえて、そのあとクイズで <b>文から災害を当てる</b> 練習をします。</div>
+
+  <div class="dis4">
+    <div class="dcard d1">
+      <h4>地震</h4>
+      <ul>
+        <li>道がわれる</li>
+        <li>建物がくずれる</li>
+        <li>火事になる</li>
+        <li>津波が来る</li>
+      </ul>
+    </div>
+    <div class="dcard d2">
+      <h4>水害（大雨・台風）</h4>
+      <ul>
+        <li>川の水があふれる</li>
+        <li>家や道が水につかる</li>
+        <li>土砂がくずれる</li>
+        <li>下水があふれる</li>
+      </ul>
+    </div>
+    <div class="dcard d3">
+      <h4>大雪</h4>
+      <ul>
+        <li>雪の重みで家がこわれる</li>
+        <li>道が通れなくなる</li>
+        <li>電車が止まる</li>
+        <li>停電になる</li>
+      </ul>
+    </div>
+    <div class="dcard d4">
+      <h4>突風（たつまき）</h4>
+      <ul>
+        <li>木がたおれる</li>
+        <li>屋根がとぶ</li>
+        <li>物が空をとぶ</li>
+        <li>ビニルハウスがやぶれる</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sub">この文、どの災害？</h3>
+  <div class="qlist" id="quizB"></div>
+</section>
+
+<!-- ================= 3 そなえ仕分け ================= -->
+<section class="panel" id="p3" role="tabpanel">
+  <div class="sechead"><h2>そなえを 4つに仕分けよう</h2><span class="tag">地図・施設・もの・人</span></div>
+  <div class="howto"><b>やり方：</b>カードをタップして選ぶ → 入れる箱をタップ。ちがう箱に入れると <b>赤くもどってくる</b>ので、考え直せます。ぜんぶ入れると、下に こたえが 出ます。<br><b>ヒント：</b>「人がうごかせない大きなもの」は<b>施設</b>。「人がうごかす・つかう」は<b>もの</b>か<b>人</b>。「調べてわかる」は<b>地図</b>。</div>
+
+  <div class="bins">
+    <div class="bin" data-bin="map"><h5>地図<small>どこが あぶないか 調べる</small></h5><div class="items"></div></div>
+    <div class="bin" data-bin="fac"><h5>施設<small>つくって 水を ふせぐ</small></h5><div class="items"></div></div>
+    <div class="bin" data-bin="mono"><h5>もの<small>ためて おいて わたす</small></h5><div class="items"></div></div>
+    <div class="bin" data-bin="hito"><h5>人<small>うごいて 助ける</small></h5><div class="items"></div></div>
+  </div>
+
+  <div class="bar">
+    <span>のこり <b id="left">16</b> まい</span>
+    <button class="btn ghost" id="sortReset" type="button">はじめから</button>
+    <button class="btn ghost" id="sortAll" type="button">ぜんぶ もどす</button>
+  </div>
+
+  <div class="pool" id="pool"></div>
+  <div class="fb" id="sortfb"></div>
+</section>
+
+<!-- ================= 4 一問一答 ================= -->
+<section class="panel" id="p4" role="tabpanel">
+  <div class="sechead"><h2>一問一答</h2><span class="tag">プリントに出るところ</span></div>
+  <div class="howto">わからないときは、<b>第2時・第3時・第4時のプリント</b>を見かえそう。まちがえても「もう一回」でやり直せます。ぜんぶ正解になるまで、くり返すのがおすすめ。</div>
+  <div class="qlist" id="quizC"></div>
+</section>
+
+<!-- ================= 5 考える問題 ================= -->
+<section class="panel" id="p5" role="tabpanel">
+  <div class="sechead"><h2>考える問題</h2><span class="tag test">さいごの1問に 対応</span></div>
+  <div class="howto"><b>書き方のじゅんび：</b>① ヒント1で「何を見るか」→ ② ヒント2で「使うことば」→ ③ ヒント3で「書き出し」→ ④ 自分のことばで書く → ⑤ キーワードが入ったかチェック → ⑥ 答えのれいとくらべる。<br><b>「〜から。」「〜ため。」</b>で終わらせると、理由を書いたことになります。</div>
+  <div id="thinks"></div>
+</section>
+
+<footer class="wrap">
+  もとにした資料：4年社会 教科書「自然災害からくらしを守る」／単元プリント（神奈川県の4つの災害・そなえ）／横浜市「地域防災拠点 備蓄品一覧」「浸水ハザードマップ」／国土交通省 京浜河川事務所「鶴見川多目的遊水地」／防衛省「災害派遣の仕組み」。<br>
+  <b>この画面は、プリントの問題をそのまま出していません。</b>同じ中身を、ちがう聞き方・ちがう言葉で聞いています。だから「答えをおぼえる」のではなく「わかった」で点数が上がります。
+</footer>
+</main>
+<script>
+/* ===================== データ ===================== */
+const PAIRS=[
+ {c:"etc",t:"ひなん場所",s:"ひなん所",m:"ちがうもの！ ひなん場所＝地震のとき、まず集まって身を守る所（公園・校庭）。ひなん所＝家にもどれない人が、しばらく生活する所（体育館・教室）。",p:"教科書 p.81・85"},
+ {c:"suigai",t:"洪水ハザードマップ",s:"浸水ハザードマップ",m:"大雨でどこが水につかるかを示した地図。横浜市では「浸水ハザードマップ」と呼んでいる。",p:"横浜市"},
+ {c:"suigai",t:"遊水地",s:"多目的遊水地",m:"大雨のとき、川の水をわざとためて下流の水位を下げる場所。ふだんは公園。鶴見川では「鶴見川多目的遊水地」。",p:"教科書 p.88"},
+ {c:"etc",t:"気象庁",s:"気象台",m:"天気や大雨の情報を出す国の機関。横浜には「横浜地方気象台」がある。",p:""},
+ {c:"toppu",t:"突風",s:"たつまき・竜巻",m:"急に強くふく風。2015年に藤沢市で被害が出た。",p:""},
+ {c:"oyuki",t:"豪雪",s:"大雪",m:"たくさん雪がふること。2014年に箱根町で大きな被害が出た。",p:""},
+ {c:"jishin",t:"災害派遣",s:"自衛隊の出動",m:"自衛隊が災害のときに出動すること。都道府県知事などの要請で行われる。",p:"防衛省"},
+ {c:"etc",t:"自主防災組織",s:"地域の防災組織・町内会",m:"同じ地域の人が、自分たちで助け合うために作る組織。",p:""},
+ {c:"etc",t:"備蓄品",s:"そなえのもの・非常用持ち出し品",m:"災害のために用意しておくもの。家に置くものと、リュックに入れて持ち出すものがある。",p:""},
+ {c:"etc",t:"協力を求める",s:"おねがいする・応援をたのむ",m:"市が県や会社に「力を貸してください」とたのむこと。穴うめに出る。",p:""}
+];
+
+const QA=[
+ {q:"「ひなん場所」と「ひなん所」の ちがいで、正しいのは？",c:["ひなん場所は まず集まる所、ひなん所は しばらく生活する所","同じもの","ひなん所のほうが 広い","ひなん場所は 家の中"],a:0,e:"ひなん場所＝身を守るために集まる所。ひなん所＝家にもどれない人が生活する所。"},
+ {q:"横浜市で「洪水ハザードマップ」と よばれている ものは？",c:["浸水ハザードマップ","防災マップ","遊水地マップ","土砂マップ"],a:0,e:"横浜市の よび名は「浸水ハザードマップ」。同じ 中身の 地図です。"},
+ {q:"「多目的遊水地」を みじかく 言うと？",c:["遊水地","ため池","ダム","堤防"],a:0,e:"鶴見川の「鶴見川多目的遊水地」は 日本でも 大きな 遊水地。"},
+ {q:"「気象台」と 同じ しごとを する 国の きかんは？",c:["気象庁","県庁","市役所","消防署"],a:0,e:"気象庁の 地方の きかんが「気象台」です。"},
+ {q:"2015年 藤沢市で ひがいが 出た「とっぷう」を 漢字で 書くと？",c:["突風","疾風","強風","暴風"],a:0,e:"「突風」。たつまき・竜巻も 同じ なかまです。"},
+ {q:"「自衛隊の 出動」を 教科書の ことばで 言うと？",c:["災害派遣","救助活動","防災活動","応援"],a:0,e:"災害派遣は 都道府県知事などの 要請で 行われます。"},
+ {q:"市が 県や 会社に「力を 貸してください」と たのむことを、漢字2字で？",c:["協力","要請","依頼","応援"],a:0,e:"プリントの 穴うめは「協力」。自衛隊の ときは「要請」を 使うので まちがえやすい。"},
+ {q:"「町内会」と 同じような、地域で 助け合う 組織は？",c:["自主防災組織","消防団","市役所","ＰＴＡ"],a:0,e:"自主防災組織。ひがいの 様子を 市に 知らせたり、ひなんを 助けたりします。"}
+];
+
+const FLIPS=[
+ ["ハザードマップ","どこに ひがいの おそれがあるかを まとめた 地図。","教科書 p.82"],
+ ["浸水ハザードマップ","大雨で どこが 水につかるかを 示した 地図（横浜市の よび名）。","横浜市"],
+ ["遊水地","大雨の とき、川の 水を わざと ためて、下流の 水位を 下げる 場所。","p.88"],
+ ["堤防","川の 水が あふれないように つくった 土手。","p.88"],
+ ["備蓄倉庫","水・毛布・食料などを しまっておく 倉庫。学校にも ある。","第3時"],
+ ["地域防災拠点","震度5強以上で、市立の 小・中学校に 開設される 場所。","横浜市"],
+ ["3日分","横浜市が すすめている 家庭の 備蓄の めやす。","p.86"],
+ ["9L","1人が 1日に つかう 水 3L × 3日分 ＝ 9L。","p.86"],
+ ["震度5強","地域防災拠点が 開設される ゆれの 大きさ。","横浜市"],
+ ["自主防災組織","同じ 地域の 人が 助け合うために つくる 組織。","p.90"],
+ ["災害派遣","自衛隊が 災害の とき 出動すること。知事などの 要請で。","防衛省"],
+ ["自助・共助・公助","自分の 家／地域の 助け合い／市や県・国の 取り組み。","p.92"],
+ ["気象台","天気や 大雨の 情報を 出す 国の 機関。","p.82"]
+];
+
+const QB=[
+ {q:"強い 風で、木が たおれたり、屋根が とんだりする。",c:["突風","地震","水害","大雪"],a:0,e:"風の ひがい＝突風（たつまき・竜巻）。"},
+ {q:"道が われたり、建物が くずれたりする。",c:["地震","水害","大雪","突風"],a:0,e:"地面が ゆれる ひがい＝地震。"},
+ {q:"川の 水が あふれて、家や 道が 水に つかる。",c:["水害","地震","大雪","突風"],a:0,e:"大雨・台風による ひがい＝水害。"},
+ {q:"雪の 重みで 家が こわれたり、道が 通れなく なったりする。",c:["大雪","水害","地震","突風"],a:0,e:"雪の ひがい＝大雪（豪雪）。"},
+ {q:"海の 近くで、大きな 波が おしよせる。",c:["地震（津波）","水害","大雪","突風"],a:0,e:"津波は 地震の あとに 来ます。"},
+ {q:"山の しゃ面が くずれて、家を おしつぶす。",c:["水害（大雨）","地震","大雪","突風"],a:0,e:"大雨で 地しんが ゆるむ 土砂くずれ。水害の なかま。"},
+ {q:"雪が 50cm つもって、電車が 止まり 学校が 休みに なった。",c:["大雪","水害","地震","突風"],a:0,e:"交通が 止まるのも 大雪の ひがい。"}
+];
+
+const TOKENS=[
+ {t:"ハザードマップ",b:"map"},
+ {t:"浸水ハザードマップ",b:"map"},
+ {t:"土砂災害の地図",b:"map"},
+ {t:"わが家の防災マップ",b:"map"},
+ {t:"遊水地",b:"fac"},
+ {t:"堤防",b:"fac"},
+ {t:"備蓄倉庫",b:"fac"},
+ {t:"ひなん所（体育館）",b:"fac"},
+ {t:"毛布",b:"mono"},
+ {t:"飲料水",b:"mono"},
+ {t:"トイレパック",b:"mono"},
+ {t:"保存パン",b:"mono"},
+ {t:"自衛隊",b:"hito"},
+ {t:"消防",b:"hito"},
+ {t:"自主防災組織",b:"hito"},
+ {t:"ひなん訓練",b:"hito"}
+];
+
+const QC=[
+ {p:"p.78",q:"神奈川県で 起きる 4つの 災害は？",c:["地震・水害・大雪・突風","地震・火事・台風・雷","水害・地震・火山・津波","大雪・地震・台風・高潮"],a:0,e:"プリントの 大問1に 出た 4つ。神奈川県では ぜんぶ 起きています。"},
+ {p:"p.78",q:"神奈川県の 災害について、正しい ものは？",c:["県内では さまざまな 自然災害が 起きている","地震が ほとんどである","これまで 大きな ひがいを 受けて いない","大雪は めったに ふらない"],a:0,e:"「地震だけ」では ありません。4つ ぜんぶ 起きています。"},
+ {p:"p.90",q:"災害が 起きると、市は 県や 会社などに 何を 求める？",c:["協力","ぜい金","ひなん","めいれい"],a:0,e:"「市は 県や 会社などに 協力を 求める」。プリントの 穴うめ。"},
+ {p:"p.92",q:"救助の ために、国から 出動する のは？",c:["自衛隊","ボランティア","消防団","県警"],a:0,e:"大きな 災害の ときは、国から 自衛隊が 出動することも あります。"},
+ {p:"p.92",q:"自衛隊の 災害派遣は、だれの 要請で 行われる？",c:["都道府県知事など","校長先生","気象台","会社の 社長"],a:0,e:"原則として 都道府県知事などの 要請で 行われます（防衛省）。"},
+ {p:"p.82",q:"どこに ひがいの おそれがあるか、じょうほうを まとめた 地図は？",c:["ハザードマップ","遊水地","防災メール","ひなん所"],a:0,e:"ハザードマップ。家の 近くの 地図を 見ておくと 安心。"},
+ {p:"p.88",q:"横浜市で、水害時に 鶴見川の 水が あふれないように 整備している ものは？",c:["遊水地","ダム","用水路","防潮堤"],a:0,e:"鶴見川多目的遊水地。面積84ha・総貯水量390万m³。"},
+ {p:"p.88",q:"鶴見川多目的遊水地は、ふだん 何に 使われている？",c:["公園","田んぼ","駐車場","工場"],a:0,e:"新横浜公園として 使われています。だから「多目的」。"},
+ {p:"p.86",q:"横浜市が すすめている 家庭の 備蓄の めやすは？",c:["3日分","1週間分","1か月分","1日分"],a:0,e:"最低3日分。水は 1人 1日 3L が めやす。"},
+ {p:"p.86",q:"1人が 1日に 必要な 水の 量は？",c:["3L","1L","9L","500mL"],a:0,e:"飲料水など 1人 1日 3リットル。"},
+ {p:"p.86",q:"3日分の 水は、1人 何L？",c:["9L","3L","6L","12L"],a:0,e:"3L × 3日 ＝ 9L。2Lの ペットボトル 4本と 1L 1本で 9L。"},
+ {p:"p.87",q:"地域防災拠点が 開設されるのは、震度いくつ 以上？",c:["5強","4","6弱","3"],a:0,e:"震度5強以上で、市立の 小・中学校に 開設されます。"},
+ {p:"p.87",q:"地域防災拠点は どこに 開設される？",c:["市立の 小・中学校","公園","市役所","体育館だけ"],a:0,e:"学校が 地域の ひなんの 場に なります。"},
+ {p:"p.87",q:"1つの 拠点に 用意されている 毛布は 何枚？",c:["240枚","24枚","2,400枚","1,000枚"],a:0,e:"毛布240枚、飲料水2,216本、トイレパック5,000セットなど。"},
+ {p:"p.87",q:"1つの 拠点に 用意されている 飲料水は 何本？",c:["2,216本","221本","22,160本","1,000本"],a:0,e:"500mLの 本数で 2,216本。クラッカー・保存パンは 各1,000食。"},
+ {p:"p.92",q:"災害の とき、市が 住民に じょうほうを 伝える しくみは？",c:["防災メール","校内放送","回覧板","新聞"],a:0,e:"防災メールなどで、ひなん場所や ひなん所を 伝えます。"},
+ {p:"p.86",q:"家で そなえる（自助）で、用意する ものは？",c:["水・食料・懐中電灯・ラジオ","テレビと ゲーム","じゅうきょ","車"],a:0,e:"水・食料・懐中電灯・ラジオ・救急セットなど。家具の 転倒防止も。"},
+ {p:"p.90",q:"ひがいの 様子を 市に 知らせるのは だれ？",c:["自主防災組織など 地域の人","気象台","会社","自衛隊"],a:0,e:"地域の 人が ひがいを 集めて 市に 知らせます。"}
+];
+
+const THINK=[
+ {t:"なぜ 横浜市は「3日分」なの？",sit:"横浜市は、家庭の備蓄は「最低3日分」と よびかけています。なぜ 3日分 なのか、理由を 考えよう。",
+  hints:["ヒント1：災害の とき、道路や 店は どう なる？","ヒント2：使う ことば＝「すぐに」「届かない」「助けが 来るまで」","ヒント3：「大きな災害の ときは、〜から。」で 書き出す"],
+  words:["すぐに","届かない","3日","助け","道路","店","買えない"],
+  model:"大きな災害の ときは、道路が 通れなく なったり 店が 開かなかったりして、水や 食料が すぐには 届かないから。市や 県の 助けが 来るまで、自分たちで 何日か 生活できるように、最低3日分を 用意しておく。"},
+ {t:"ものが 足りないとき、どうする？",sit:"学校の 倉庫を 見たら、思ったより 少なかった。毛布も 水も 数に かぎりが あります。数を ふやす いがいに、どんな 方法が ある？",
+  hints:["ヒント1：ものが 足りない → そもそも 何が 起きなければ いい？","ヒント2：使う ことば＝「遊水地」「ハザードマップ」「ひなん」「家で そなえる」","ヒント3：「数を ふやす いがいに、〜という 方法が ある。」"],
+  words:["遊水地","ハザードマップ","ひなん","家","減らす","あふれない","早く"],
+  model:"数を ふやす いがいに、三つ 方法が ある。一つ目は、遊水地や 堤防で 川の 水が あふれないようにして、ひがいを 小さくすること。二つ目は、ハザードマップで あぶない 場所を 知って、早く ひなんすること。三つ目は、家で 3日分 そなえて、倉庫の ものに たよらなくても すむようにすること。"},
+ {t:"あなたが できること",sit:"「自分や 家族で そなえる（自助）」で、あなたが 今日から できることを 書きましょう。", 
+  hints:["ヒント1：家で できること／学校で できること","ヒント2：いつ・なにを・なぜ の 3つで 書く","ヒント3：「わたしは、〜の ときに、〜する。なぜなら〜から。」"],
+  words:["水","懐中電灯","話し合う","確かめる","3日分","家具","ひなん"],
+  model:"わたしは、家で 水と 食料を 3日分 用意しておく。なぜなら、災害の ときは お店が 開かず、すぐに 買えないから。あわせて、家族と ひなん場所を 話し合っておく。"},
+ {t:"「そなえは、それで じゅうぶん？」",sit:"この単元の さいごの 問いです。あなたの 考えを、理由をつけて 書きましょう。",
+  hints:["ヒント1：じゅうぶん／じゅうぶんでは ない、どちらでも OK","ヒント2：理由に「ものが 足りない」「人が たりない」「みんなで やる」を 入れる","ヒント3：「わたしは、〜だと 考える。なぜなら〜から。」"],
+  words:["足りない","人","みんな","協力","家","市","減らす"],
+  model:"わたしは、じゅうぶんでは ないと 考える。なぜなら、倉庫の ものには 数に かぎりが あり、助ける 人も たりないから。だから、家で 3日分 そなえ、地域の 人と 助け合い、市や 県の 取り組みも 組み合わせて、みんなで そなえる ことが 大切だ。"}
+];
+
+/* ===================== ふりがな ===================== */
+const RUBY=[["備蓄","びちく"],["拠点","きょてん"],["避難","ひなん"],["浸水","しんすい"],["遊水地","ゆうすいち"],["堤防","ていぼう"],["突風","とっぷう"],["豪雪","ごうせつ"],["気象庁","きしょうちょう"],["気象台","きしょうだい"],["自衛隊","じえいたい"],["派遣","はけん"],["要請","ようせい"],["震度","しんど"],["毛布","もうふ"],["飲料水","いんりょうすい"],["防災","ぼうさい"],["訓練","くんれん"],["被害","ひがい"],["協力","きょうりょく"],["組織","そしき"],["災害","さいがい"],["津波","つなみ"],["土砂","どしゃ"]];
+const RX=new RegExp(RUBY.map(r=>r[0]).join("|"),"g");
+const RMAP=Object.fromEntries(RUBY);
+function addRuby(root){
+  const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(n){
+    const p=n.parentElement; if(!p) return NodeFilter.FILTER_REJECT;
+    if(p.closest("ruby,svg,textarea,script,style,select,option,.noR")) return NodeFilter.FILTER_REJECT;
+    RX.lastIndex=0; return RX.test(n.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;}});
+  const list=[]; while(w.nextNode()) list.push(w.currentNode);
+  list.forEach(n=>{
+    const frag=document.createDocumentFragment(); let last=0; const s=n.nodeValue; RX.lastIndex=0; let m;
+    while((m=RX.exec(s))){
+      if(m.index>last) frag.appendChild(document.createTextNode(s.slice(last,m.index)));
+      const r=document.createElement("ruby"); r.textContent=m[0];
+      const rt=document.createElement("rt"); rt.textContent=RMAP[m[0]]; r.appendChild(rt); frag.appendChild(r);
+      last=m.index+m[0].length;
+    }
+    if(last<s.length) frag.appendChild(document.createTextNode(s.slice(last)));
+    n.parentNode.replaceChild(frag,n);
+  });
+}
+function plain(el){const c=el.cloneNode(true);c.querySelectorAll("rt,.say").forEach(x=>x.remove());return c.textContent.replace(/\s+/g," ").trim();}
+
+/* ===================== 読み上げ ===================== */
+const SPK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg>';
+let sayOn=true;
+function sayBtn(getEl){
+  const b=document.createElement("button"); b.className="say"; b.type="button"; b.innerHTML=SPK+"読む";
+  b.addEventListener("click",()=>{ if(!("speechSynthesis" in window)) return;
+    speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(plain(getEl()).replace(/〜/g,"")); u.lang="ja-JP"; u.rate=.9; speechSynthesis.speak(u);});
+  return b;
+}
+
+/* ===================== スコア ===================== */
+const done=new Set(); let total=0;
+function upd(){document.getElementById("sc").textContent=done.size;document.getElementById("scAll").textContent=total;}
+
+function shuffle(a){const r=a.slice();for(let i=r.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[r[i],r[j]]=[r[j],r[i]];}return r;}
+
+/* ===================== 選択クイズ ===================== */
+function buildQuiz(host,data,prefix,showPage){
+  data.forEach((d,i)=>{
+    total++; const id=prefix+i;
+    const q=document.createElement("div"); q.className="q";
+    q.innerHTML='<div class="qh"><span class="qn">'+(i+1)+'</span><div class="qt">'+d.q+'</div></div><div class="meta"></div><div class="choices"></div><div class="fb"></div><button class="retry" type="button">もう一回</button>';
+    const meta=q.querySelector(".meta");
+    if(showPage&&d.p){const c=document.createElement("span");c.className="chip p";c.textContent="たしかめる所 "+d.p;meta.appendChild(c);}
+    meta.appendChild(sayBtn(()=>q.querySelector(".qt")));
+    const box=q.querySelector(".choices"), fb=q.querySelector(".fb"), rt=q.querySelector(".retry");
+    const idx=shuffle(d.c.map((t,j)=>j));
+    idx.forEach(j=>{
+      const b=document.createElement("button"); b.type="button"; b.className="ch"; b.textContent=d.c[j];
+      b.addEventListener("click",()=>{
+        if(box.dataset.locked) return;
+        if(j===d.a){ b.classList.add("ok"); box.dataset.locked="1";
+          fb.className="fb ok show"; fb.innerHTML='<span class="mark">○</span>その とおり！ '+d.e;
+          done.add(id); upd(); rt.classList.add("show");
+          box.querySelectorAll(".ch").forEach(x=>x.disabled=true);
+        } else {
+          b.classList.add("ng"); b.disabled=true;
+          fb.className="fb ng show"; fb.innerHTML='<span class="mark">×</span>おしい！ もう いちど 考えてみよう。';
+        }
+      });
+      box.appendChild(b);
+    });
+    rt.addEventListener("click",()=>{
+      delete box.dataset.locked; done.delete(id); upd();
+      fb.className="fb"; fb.innerHTML=""; rt.classList.remove("show");
+      box.querySelectorAll(".ch").forEach(x=>{x.disabled=false;x.classList.remove("ok","ng");});
+    });
+    host.appendChild(q);
+  });
+}
+
+/* ===================== 1 ことば ===================== */
+const pairsHost=document.getElementById("pairs");
+PAIRS.forEach(p=>{
+  const d=document.createElement("div"); d.className="pair "+p.c;
+  d.innerHTML='<div class="row"><div class="w t"><small>教科書</small>'+p.t+'</div><div class="eq">＝</div><div class="w s noR"><small>プリント</small>'+p.s+'</div></div><div class="mean">'+p.m+(p.p?'<span class="pg">'+p.p+'</span>':'')+'</div>';
+  pairsHost.appendChild(d);
+});
+buildQuiz(document.getElementById("quizA"),QA,"A",false);
+
+const flipsHost=document.getElementById("flips");
+FLIPS.forEach(f=>{
+  const b=document.createElement("button"); b.type="button"; b.className="flip"; b.setAttribute("aria-pressed","false");
+  b.innerHTML='<div class="in"><div class="f"><div class="word">'+f[0]+'</div><div class="tap">タップで こたえ</div></div><div class="b"><b>'+f[0]+'</b>'+f[1]+'<span style="display:block;margin-top:6px;font-size:.74rem;opacity:.75">'+f[2]+'</span></div></div>';
+  b.addEventListener("click",()=>b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")==="true"?"false":"true"));
+  flipsHost.appendChild(b);
+});
+
+/* ===================== 2 災害当て ===================== */
+buildQuiz(document.getElementById("quizB"),QB,"B",false);
+
+/* ===================== 3 仕分け ===================== */
+(function(){
+  const pool=document.getElementById("pool");
+  const bins=[...document.querySelectorAll(".bin")];
+  const left=document.getElementById("left");
+  const fb=document.getElementById("sortfb");
+  let pick=null, placed=0;
+  total++; upd();
+
+  function clearSel(){ bins.forEach(b=>b.classList.remove("sel")); }
+
+  function build(){
+    pool.innerHTML=""; bins.forEach(b=>b.querySelector(".items").innerHTML="");
+    pick=null; placed=0; left.textContent=TOKENS.length; fb.className="fb"; fb.innerHTML="";
+    done.delete("SORT"); upd();
+    shuffle(TOKENS).forEach(t=>{
+      const el=document.createElement("button"); el.type="button"; el.className="tok"; el.textContent=t.t; el.dataset.bin=t.b;
+      el.addEventListener("click",()=>{
+        if(el.classList.contains("done")) return;
+        if(pick===el){ el.classList.remove("pick"); pick=null; return; }
+        if(pick) pick.classList.remove("pick");
+        pick=el; el.classList.add("pick");
+        clearSel();
+      });
+      pool.appendChild(el);
+    });
+  }
+
+  bins.forEach(bin=>{
+    bin.addEventListener("click",()=>{
+      if(!pick) return;
+      const ok = pick.dataset.bin===bin.dataset.bin;
+      if(ok){
+        pick.classList.remove("pick"); pick.classList.add("done");
+        pick.disabled=true;
+        bin.querySelector(".items").appendChild(pick);
+        pick=null; placed++; left.textContent=TOKENS.length-placed;
+        if(placed===TOKENS.length){
+          fb.className="fb ok show"; fb.innerHTML='<span class="mark">○</span>ぜんぶ 入った！ 地図＝調べる、施設＝つくる、もの＝ためる、人＝うごく。この4つで そなえは できています。';
+          done.add("SORT"); upd();
+        }
+      } else {
+        pick.classList.add("bad");
+        const el=pick;
+        setTimeout(()=>el.classList.remove("bad"),420);
+        fb.className="fb ng show"; fb.innerHTML='<span class="mark">×</span>ちがう 箱だよ。「人が うごかせる？」「つくった もの？」で 考えてみよう。';
+      }
+    });
+  });
+
+  document.getElementById("sortReset").addEventListener("click",build);
+  document.getElementById("sortAll").addEventListener("click",()=>{
+    [...pool.querySelectorAll(".tok,.done")].forEach(()=>{});
+    document.querySelectorAll(".bin .items .tok").forEach(t=>{ pool.appendChild(t); t.classList.remove("done"); t.disabled=false; });
+    placed=0; left.textContent=TOKENS.length; done.delete("SORT"); upd(); fb.className="fb"; fb.innerHTML="";
+  });
+  build();
+})();
+
+/* ===================== 4 一問一答 ===================== */
+buildQuiz(document.getElementById("quizC"),QC,"C",true);
+
+/* ===================== 5 考える問題 ===================== */
+(function(){
+  const host=document.getElementById("thinks");
+  THINK.forEach((d,ti)=>{
+    let w="";
+    const box=document.createElement("div"); box.className="think";
+    box.innerHTML='<h4>'+(ti+1)+'　'+d.t+'</h4><p class="sit">'+d.sit+'</p>'+
+      d.hints.map((h,hi)=>'<div class="hintbox" data-h="'+hi+'"><b>'+h.split("：")[0]+'：</b>'+h.split("：").slice(1).join("：")+'</div>').join("")+
+      '<textarea placeholder="ここに 書いてみよう（2〜3文で）"></textarea>'+
+      '<div class="hbtns"><button class="btn ghost" type="button" data-act="h">ヒントを 出す</button>'+
+      '<button class="btn" type="button" data-act="k">キーワードを チェック</button>'+
+      '<button class="btn ghost" type="button" data-act="m">答えのれいを 見る</button></div>'+
+      '<div class="words">'+d.words.map(x=>'<span class="word">'+x+'</span>').join("")+'</div>'+
+      '<div class="model"><b>答えのれい（1つの 書き方です。同じで なくて OK）</b>'+d.model+'</div>';
+    const ta=box.querySelector("textarea");
+    let hi=0;
+    box.querySelector('[data-act="h"]').addEventListener("click",()=>{
+      const hs=box.querySelectorAll(".hintbox");
+      if(hi<hs.length){ hs[hi].classList.add("show"); hi++; }
+    });
+    box.querySelector('[data-act="k"]').addEventListener("click",()=>{
+      const txt=ta.value;
+      box.querySelectorAll(".word").forEach(el=>{
+        el.classList.toggle("hit", txt.includes(el.textContent));
+      });
+      const hits=box.querySelectorAll(".word.hit").length;
+      el_fb(box,hits,d.words.length);
+    });
+    box.querySelector('[data-act="m"]').addEventListener("click",()=>{
+      box.querySelector(".model").classList.toggle("show");
+    });
+    host.appendChild(box);
+  });
+  function el_fb(box,hits,all){
+    let f=box.querySelector(".kfb");
+    if(!f){ f=document.createElement("div"); f.className="fb kfb"; box.appendChild(f); }
+    f.className="fb kfb show "+(hits>=2?"ok":"ng");
+    f.innerHTML='<span class="mark">'+(hits>=2?"○":"×")+'</span>キーワードが '+hits+' / '+all+' 入っています。'+
+      (hits>=2?"この調子で、「なぜなら〜から」まで 書けているか 見なおそう。":"「ヒント2」の ことばを 1つ、文の 中に 入れてみよう。");
+  }
+})();
+
+/* ===================== ツール ===================== */
+document.getElementById("tRuby").addEventListener("click",e=>{
+  const on=document.body.classList.toggle("noruby");
+  e.currentTarget.setAttribute("aria-pressed",on?"false":"true");
+});
+document.getElementById("tBig").addEventListener("click",e=>{
+  const big=document.documentElement.style.getPropertyValue("--fs")==="20px";
+  document.documentElement.style.setProperty("--fs",big?"17px":"20px");
+  e.currentTarget.setAttribute("aria-pressed",big?"false":"true");
+});
+document.getElementById("tSay").addEventListener("click",e=>{
+  sayOn=!sayOn;
+  e.currentTarget.setAttribute("aria-pressed",sayOn?"true":"false");
+  document.querySelectorAll(".say").forEach(b=>b.style.display=sayOn?"":"none");
+});
+
+/* ===================== タブ ===================== */
+document.querySelectorAll(".tab").forEach(t=>{
+  t.addEventListener("click",()=>{
+    document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected","false"));
+    document.querySelectorAll("section.panel").forEach(x=>x.classList.remove("on"));
+    t.setAttribute("aria-selected","true");
+    document.getElementById(t.dataset.p).classList.add("on");
+    window.scrollTo({top:0,behavior:"smooth"});
+  });
+});
+
+/* ===================== 起動 ===================== */
+addRuby(document.querySelector("main"));
+upd();
+
+</script>
+</body>
+</html>
